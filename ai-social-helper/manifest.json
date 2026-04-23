@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "AI社交自动化助手",
+  "version": "2.0",
+  "description": "AI社交自动化助手",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "alarms",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "*://*.xiaohongshu.com/*",
+    "https://ark.cn-beijing.volces.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.xiaohongshu.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src https://ark.cn-beijing.volces.com/"
+  }
+}
