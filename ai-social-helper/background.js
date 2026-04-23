@@ -9,7 +9,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       },
       body: JSON.stringify({
         model: "doubao-seed-2-0-pro-260215",
-        endpoint_id: "ep-m-20260420182011-v5xsw",
+        endpoint_id: "用户虚根据模型调整自己的模型ID",
         messages: request.messages,
         temperature: 0.8,
         max_tokens: 60,
